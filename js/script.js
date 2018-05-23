@@ -36,6 +36,7 @@ function getForecast(city) {
 
 	pageLoadSucessSupport();
 	clearFields();
+	changeInfo1();
 
 	$.ajax( {
 
