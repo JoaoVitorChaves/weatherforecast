@@ -35,6 +35,7 @@ $('#search').click(function(event) {
 function getForecast(city) {
 
 	pageLoadSucessSupport();
+	clearFields();
 
 	$.ajax( {
 
@@ -44,7 +45,6 @@ function getForecast(city) {
 
 			key: APIKey,
 			city: city,
-			units: 'M',
 			lang: 'pt'
 		},	
 
@@ -74,6 +74,7 @@ function getForecast(city) {
 
     			pageLoadSucessSupport();
     			changeInfo1();
+    			clearFields();
 
     			$.ajax( {
 
@@ -83,7 +84,6 @@ function getForecast(city) {
 
 						key: APIKey,
 						city: city,
-						units: 'M',
 						lang: 'pt'
 					},
 
@@ -105,7 +105,8 @@ function getForecast(city) {
    			} else {
 
     			pageLoadSucessSupport();
-    			changeInfo2();	
+    			changeInfo2();
+    			clearFields();
 
    				$.ajax( {
 
@@ -169,9 +170,6 @@ function pageLoadSuccess(result, today, nextDays) {
 }
 
 function pageLoadSucessSupport() {
-
-	clearFields();
-	changeInfo1();
 
 	$('#loader').css('display', '');
 	$('#forecast').css('display', 'none');
